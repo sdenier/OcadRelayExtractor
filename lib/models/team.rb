@@ -13,6 +13,10 @@ class Team
     @legs.size
   end
 
+  def <<(leg)
+    @legs << leg
+  end
+
   def to_s
     "Team #{@bibNumber} on course #{@courseId}: #{nbLegs} legs"
   end
