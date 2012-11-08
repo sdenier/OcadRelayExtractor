@@ -1,9 +1,11 @@
 class TextFileFormatter
 
   def output(filename, teams)
-    File.open(outputName(filename), 'w') do |f|
+    outputFile = outputName(filename)
+    File.open(outputFile, 'w') do |f|
       teams.each {|team| teamOutput(team, f) }
     end
+    outputFile
   end
 
   def outputName(filename)

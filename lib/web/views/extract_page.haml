@@ -1,0 +1,11 @@
+.row-fluid
+  .well
+    .span8
+      Extraction des équipes et des combinaisons en cours.
+      Veuillez patienter
+      %img{:src => '/images/ajax-loader.gif'}
+    .span4
+      %a.btn.btn-warning.pull-right{:href => '/'} Retour
+
+:javascript
+  setTimeout('window.location = "/extract"', 1000)
