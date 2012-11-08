@@ -1,0 +1,17 @@
+!!! 5
+%html
+  %head
+    %title Extraction des relais OCAD
+    %link{:rel =>'stylesheet', :type => 'text/css', :href =>'/css/application.css'}
+    %link{:rel =>'stylesheet', :type => 'text/css', :href =>'/vendor/css/bootstrap.min.css'}
+    %meta{:charset => 'UTF-8'}
+
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container-fluid
+          .row-fluid
+            %a.brand.pull-left{:href => '#'} Extraction des relais OCAD
+
+    .container-fluid
+      = yield
