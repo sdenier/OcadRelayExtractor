@@ -9,16 +9,16 @@ class Team
     @legs = []
   end
 
-  def nbLegs
-    @legs.size
-  end
-
   def <<(leg)
     @legs << leg
   end
 
+  def nbLegs
+    @legs.size
+  end
+
   def to_s
-    "Team #{@bibNumber} on course #{@courseId}: #{nbLegs} legs"
+    "Team #{bibNumber} on course #{courseId}: #{nbLegs} legs #{ legs.map &:to_s }"
   end
 
 end

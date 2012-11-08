@@ -12,7 +12,7 @@ class OcadXml
   def extractTeams(teams)
     teams.map do |teamHash|
       team = Team.new( :bibNumber => teamHash['StartNo'].first.strip,
-                       :courseId => teamHash['CourseId'].first.strip)
+                       :courseId  => teamHash['CourseId'].first.strip)
       extractTeamLegs(team, teamHash['Leg'])
       team
     end
@@ -20,7 +20,8 @@ class OcadXml
 
   def extractTeamLegs(team, legs)
     legs.each do |legHash|
-      team << Leg.new
+      team << Leg.new(:legNo            => legHash['LegNo'].first.strip,
+                      :courseVariation  => legHash['Name'].first.strip)
     end
   end
 
