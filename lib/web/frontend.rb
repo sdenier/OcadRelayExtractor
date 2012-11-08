@@ -15,7 +15,7 @@ class FrontEnd < Sinatra::Base
       session[:tempfile] = params['xmlfile'][:tempfile].path
       haml :extract_page
     else
-      'error'
+      haml :error
     end
   end
 
@@ -26,8 +26,12 @@ class FrontEnd < Sinatra::Base
 private
 
   def extract_file(filename, tempfile)
-    outfile = TextFileFormatter.new.output(filename, OcadXml.new.extract(tempfile))
-    send_file File.new(outfile), :filename => outfile
+    begin
+      outfile = TextFileFormatter.new.output(filename, OcadXml.new.extract(tempfile))
+      send_file File.new(outfile), :filename => outfile
+    rescue Exception
+      haml :error
+    end
   end
 
 end
