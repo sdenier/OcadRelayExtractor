@@ -32,3 +32,12 @@ bin/extract ocad <filename.xml>
 ```
 
 outputs a text file with the same base name.
+
+Launch as a Sinatra Webapp
+--------------------------
+
+```
+rackup -p 4567
+```
+
+Go to [http://localhost:4567](http://localhost:4567)
