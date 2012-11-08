@@ -1,4 +1,5 @@
 require 'xmlsimple'
+require_relative '../models/team'
 
 class OcadXml
 
@@ -7,8 +8,11 @@ class OcadXml
     teams.nil? ? [] : extractTeams(teams)
   end
 
-  def extractTeams(teamHash)
-    puts teamHash
+  def extractTeams(teams)
+    teams.map do |teamHash|
+      Team.new( :bibNumber => teamHash['StartNo'].first.strip,
+                :courseId => teamHash['CourseId'].first.strip)
+    end
   end
 
 end
