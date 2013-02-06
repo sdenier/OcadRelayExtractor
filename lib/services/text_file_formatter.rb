@@ -19,7 +19,7 @@ class TextFileFormatter
   end
 
   def legDescription(team, leg)
-    "#{team.bibNumber}.#{leg.legNo}: #{leg.courseVariation}\n"
+    "#{team.bibNumber}.#{leg.legNo}: #{leg.courseVariation}\n\n"
   end
 
 end
